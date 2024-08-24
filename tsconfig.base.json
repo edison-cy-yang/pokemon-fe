@@ -15,9 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@env/pokemon-fe": ["global/environments/pokemon-fe/environment.ts"],
+      "@env/interface": ["global/environments/interface/environment.ts"],
       "@pokemon-fe/pokemons/api/pokemons": [
         "libs/features/pokemons/api/pokemons/src/index.ts"
-      ]
+      ],
+      "@pokemon-fe/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
