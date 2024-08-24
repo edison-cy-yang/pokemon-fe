@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pokemon-fe/pokemons/api/pokemons": [
+        "libs/features/pokemons/api/pokemons/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
