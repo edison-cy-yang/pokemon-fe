@@ -38,7 +38,7 @@ export class PokemonsService {
       .set('page', query.page.toString())
       .set('perPage', query.perPage.toString())
 
-    return this.http.get(url, { params }).pipe(
+    return this.http.get<ResObject>(url, { params }).pipe(
       map(
         (res: ResObject) => {
           return {
