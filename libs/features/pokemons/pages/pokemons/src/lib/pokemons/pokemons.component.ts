@@ -2,10 +2,10 @@ import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 @Component({
-  selector: 'lib-pokemons-pages',
+  selector: 'pokemons',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './pokemons-pages.component.html',
-  styleUrl: './pokemons-pages.component.scss',
+  templateUrl: './pokemons.component.html',
+  styleUrl: './pokemons.component.scss',
 })
-export class PokemonsPagesComponent {}
+export class PokemonsComponent {}
