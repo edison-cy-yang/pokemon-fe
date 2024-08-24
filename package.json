@@ -2,7 +2,9 @@
   "name": "@pokemon-fe/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start-pokemon-fe": "npx nx serve pokemon-fe"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.2.0",
