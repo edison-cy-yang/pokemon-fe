@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start-pokemon-fe": "npx nx serve pokemon-fe"
+    "start-pokemon-fe": "npx nx serve pokemon-fe",
+    "build-pokemon-fe": "npx nx build pokemon-fe"
   },
   "private": true,
   "dependencies": {
