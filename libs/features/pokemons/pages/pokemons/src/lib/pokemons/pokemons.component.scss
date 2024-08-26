@@ -9,4 +9,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  &__pokemons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }

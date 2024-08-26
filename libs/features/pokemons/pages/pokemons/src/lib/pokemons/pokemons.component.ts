@@ -15,12 +15,13 @@ import {
   selectPokemonsForCurrentPage,
 } from "@pokemon-fe/pokemons/api/pokemons"
 import { Page, PageQuery } from '@pokemon-fe/utils'
+import { PokemonItemComponent } from "@pokemon-fe/pokemons/shared"
 
 @UntilDestroy()
 @Component({
   selector: 'pokemons',
   standalone: true,
-  imports: [CommonModule, PokemonsModule],
+  imports: [CommonModule, PokemonsModule, PokemonItemComponent],
   templateUrl: './pokemons.component.html',
   styleUrl: './pokemons.component.scss',
 })

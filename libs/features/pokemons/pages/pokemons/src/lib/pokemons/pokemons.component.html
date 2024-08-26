@@ -1,3 +1,8 @@
 <div class="component">
-  <h3>Pokemons</h3>
+  <h3>Pokémons</h3>
+  <div class="component__pokemons">
+    @for (pokemon of pokemons; track pokemon.id) {
+      <pokemon-item [pokemon]="pokemon"></pokemon-item>
+    }
+  </div>
 </div>

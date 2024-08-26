@@ -1,1 +1,1 @@
-
+export * from "./lib/pokemon-item/pokemon-item.component"
