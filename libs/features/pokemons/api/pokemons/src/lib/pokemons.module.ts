@@ -4,6 +4,7 @@ import { provideEffects } from "@ngrx/effects"
 import { provideState } from "@ngrx/store"
 import { PokemonsEffects } from "./store/pokemons.effects"
 import * as fromPokemons from "./store/pokemons.reducer"
+import * as fromPokemonsPagination from "./store/pokemons-pagination.reducer"
 import { PokemonsService } from "./services"
 
 @NgModule({
@@ -11,6 +12,7 @@ import { PokemonsService } from "./services"
   providers: [
     PokemonsService,
     provideState(fromPokemons.pokemonsFeature),
+    provideState(fromPokemonsPagination.pokemonsPaginationFeature),
     provideEffects([PokemonsEffects]),
   ]
 })

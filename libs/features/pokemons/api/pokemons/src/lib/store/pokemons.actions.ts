@@ -20,5 +20,6 @@ export const PokemonsPageActions = createActionGroup({
   source: 'Pokemons Page',
   events: {
     'Load Pokemons': props<{ query: PageQuery}>(),
+    'Set Current Page': props<{ query: PageQuery }>(),
   }
 })
