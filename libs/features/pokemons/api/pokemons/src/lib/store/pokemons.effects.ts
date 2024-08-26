@@ -9,11 +9,21 @@ import { PokemonsApiActions, PokemonsPageActions } from "./pokemons.actions"
 
 @Injectable()
 export class PokemonsEffects {
+  /**
+   * Constructor
+   * @param actions$ - NgRX actions
+   * @param pokemonsService - PokemonsService
+   */
   constructor(
     private actions$: Actions,
     private pokemonsService: PokemonsService,
   ) {}
 
+  /**
+   * getPokemons$ effect
+   * - sets page data and dispatches success action on success
+   * - dispatches failure action on error
+   */
   getPokemons$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(PokemonsPageActions.loadPokemons),

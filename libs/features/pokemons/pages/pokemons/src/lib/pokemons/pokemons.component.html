@@ -1,22 +1,31 @@
 <div class="component">
   <h3>Pokémons</h3>
-  <div class="component__pokemons">
-    <ng-container
-      *ngFor="
-        let pokemon of pokemons
-          | paginate
-            : {
-                itemsPerPage: currentPage?.query?.perPage,
-                currentPage: currentPage?.query?.page,
-                totalItems: currentPage?.totalCount,
-                id: 'pokemons'
-              }
-      "
-    >
-      <pokemon-item [pokemon]="pokemon"></pokemon-item>
-    </ng-container>
-    
-  </div>
+  <!-- Empty state when it's loaded but data is empty -->
+  @if (loaded && !pokemons.length) {
+    <h2>Empty State</h2>
+  }
+  <!-- Loader, spinner, skeleton loader.. -->
+  @if (!loaded) {
+    <h2>Loading...</h2>
+  } @else {
+    <div class="component__pokemons">
+      <ng-container
+        *ngFor="
+          let pokemon of pokemons
+            | paginate
+              : {
+                  itemsPerPage: currentPage?.query?.perPage,
+                  currentPage: currentPage?.query?.page,
+                  totalItems: currentPage?.totalCount,
+                  id: 'pokemons'
+                }
+        "
+      >
+        <pokemon-item [pokemon]="pokemon"></pokemon-item>
+      </ng-container>
+      
+    </div>
+  }
   <pagination-controls
     class="component__pagination"
     id="pokemons"

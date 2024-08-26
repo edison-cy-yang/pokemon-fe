@@ -34,11 +34,19 @@ export class PokemonsComponent implements OnInit{
   currentPage: Page
   currentQuery: PageQuery
 
+  /**
+   * Constructor
+   * @param store - The NgRX store
+   */
   constructor(
     private store: Store
   ) {}
 
+  /**
+   * ngOnInit
+   */
   ngOnInit(): void {
+    // Subscribe to the loaded state of pokemons
     this.store
       .select(selectPokemonsLoaded)
       .pipe(untilDestroyed(this))
@@ -46,6 +54,7 @@ export class PokemonsComponent implements OnInit{
         this.loaded = loaded
       })
 
+    // Subscribe to the current page state of pokemons
     this.store
       .select(selectCurrentPokemonsPage)
       .pipe(untilDestroyed(this))
@@ -53,6 +62,7 @@ export class PokemonsComponent implements OnInit{
         this.currentPage = page
       })
 
+    // Subscribe to the current page query state
     this.store
       .select(selectCurrentPokemonsPageQuery)
       .pipe(untilDestroyed(this))
@@ -60,6 +70,7 @@ export class PokemonsComponent implements OnInit{
         this.currentQuery =  query
       })
 
+    // Check if the current page is loaded, dispatch load action if not
     this.store
       .select(selectCurrentPokemonsPageLoaded)
       .pipe(untilDestroyed(this))
@@ -71,6 +82,7 @@ export class PokemonsComponent implements OnInit{
         }
       })
 
+    // Subscribe to the list of pokemons for the current page
     this.store
       .select(selectPokemonsForCurrentPage)
       .pipe(untilDestroyed(this))
@@ -79,6 +91,11 @@ export class PokemonsComponent implements OnInit{
       })
   }
 
+  /**
+   * Handles the page change event from the pagination component.
+   * Dispatches an action to update the current page in the NgRx store.
+   * @param {number} page - The new page number to navigate to.
+   */
   onPageChange(page: number): void {
     this.store.dispatch(
       PokemonsPageActions.setCurrentPage({

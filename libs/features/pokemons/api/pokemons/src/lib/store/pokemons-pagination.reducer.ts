@@ -11,10 +11,6 @@ export interface PokemonsPaginationState extends EntityState<Page> {
   loaded: boolean
 }
 
-export interface PokemonsPaginationPartialState {
-  readonly [POKEMONS_PAGINATION_FEATURE_KEY]: PokemonsPaginationState
-}
-
 export const pokemonsPaginationAdapter: EntityAdapter<Page> = createEntityAdapter<Page>()
 
 export const initialQuery: PageQuery = {

@@ -11,10 +11,6 @@ export interface PokemonsState extends EntityState<Pokemon> {
   error: HttpErrorResponse | null
 }
 
-export interface PokemonsPartialState {
-  readonly [POKEMONS_FEATURE_KEY]: PokemonsState
-}
-
 export const pokemonsAdapter: EntityAdapter<Pokemon> =
   createEntityAdapter<Pokemon>()
 
