@@ -1,4 +1,4 @@
-export const MAX_PAGINATION_SIZE = 6
+export const MAX_PAGINATION_SIZE = 10
 
 export interface PaginatedResult<T> {
   count: number
