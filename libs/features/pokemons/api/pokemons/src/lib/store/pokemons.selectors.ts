@@ -45,7 +45,7 @@ export const selectCurrentPokemonsPageQuery = createSelector(
   (state: PokemonsPaginationState) => state.currentQuery,
 )
 
-export const selectPokemonsPageLoaded = createSelector(
+export const selectCurrentPokemonsPageLoaded = createSelector(
   selectPokemonsPageEntities,
   selectCurrentPokemonsPageQuery,
   (entities, query) => {

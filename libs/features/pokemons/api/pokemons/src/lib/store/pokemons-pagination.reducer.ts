@@ -4,6 +4,7 @@ import { createFeature, createReducer, on } from "@ngrx/store"
 import { PokemonsApiActions, PokemonsPageActions } from "./pokemons.actions"
 
 export const POKEMONS_PAGINATION_FEATURE_KEY = "pokemons_pagination"
+export const POKEMONS_PER_PAGE = 50
 
 export interface PokemonsPaginationState extends EntityState<Page> {
   currentQuery: PageQuery
@@ -18,7 +19,7 @@ export const pokemonsPaginationAdapter: EntityAdapter<Page> = createEntityAdapte
 
 export const initialQuery: PageQuery = {
   page: 1,
-  perPage: 50,
+  perPage: POKEMONS_PER_PAGE,
 }
 
 export const initialPokemonsPaginationState: PokemonsPaginationState = 

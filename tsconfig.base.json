@@ -13,6 +13,9 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@env/interface": ["global/environments/interface/environment.ts"],
